@@ -1,0 +1,79 @@
+package csm10jlab07;
+import csm10jlab07.Line; 
+public class Program { 
+    public static void main(String[] args){ 
+        // test cases 
+        // default constructor 
+        Line slopeOfOne = new Line(); 
+        
+        // test the get / set methods 
+        System.out.println("Test Get / Set"); 
+        slopeOfOne.setA(-1); 
+        System.out.println("A == -1 ? " + (slopeOfOne.getA() == -1)); 
+        slopeOfOne.setB(1); 
+        System.out.println("B == 1 ? " + (slopeOfOne.getB() == 1)); 
+        slopeOfOne.setC(1); 
+        System.out.println("C == 1 ? " + (slopeOfOne.getC() == 1)); 
+        System.out.println(); 
+       
+        // special constructor 
+        Line slopeOfTwo = new Line(-2, 1, 2);     
+        System.out.println("Test special constructor"); 
+        System.out.println("A == -2 ? " + (slopeOfTwo.getA() == -2)); 
+        System.out.println("B == 1 ? " + (slopeOfTwo.getB() == 1)); 
+        System.out.println("C == 2 ? " + (slopeOfTwo.getC() == 2)); 
+        System.out.println(); 
+    
+        
+        // slope defined 
+        System.out.println("Test slope defined"); 
+        System.out.println("Slope defined ? " + slopeOfOne.getSlope()); 
+        System.out.println(); 
+        
+        // slope undefined 
+        System.out.println("Test slope undefined"); 
+        System.out.println("Slope NaN ? " + slopeOfOne.isNaN(  )); 
+        System.out.println(); 
+        
+        // Not required, but probably good to do 
+        // Horizontal 
+        System.out.println("Test Horizontal"); 
+        System.out.println("IsHorizontal ? " + slopeOfOne.isHorizontal()); 
+    
+        // Not required, but probably good to do 
+        // vertical 
+        System.out.println("Test Vertical"); 
+        System.out.println("IsVertical ? " + slopeOfOne.isVertical()); 
+    
+    
+        // parallelTo         
+        System.out.println("Test parallel"); 
+        System.out.println("Are parallel? " + (slopeOfOne.getSlope() == slopeOfTwo.getSlope())); 
+        
+        // not parallelTo 
+        System.out.println("Are not parallel? " + (slopeOfOne.getSlope() != slopeOfTwo.getSlope())); 
+        System.out.println(); 
+        
+        // perpendicularTo 
+        System.out.println("Test perpendicular"); 
+        System.out.println("Are perpendicular? " + ((slopeOfOne.getSlope() * slopeOfTwo.getSlope() == -1) || (slopeOfOne.NaN == true && slopeOfTwo.horizontal == true) || (slopeOfOne.horizontal == true && slopeOfTwo.NaN == true))); 
+    
+        
+        // not perpendicularTo 
+        System.out.println("Are not perpendicular? " + ((slopeOfOne.getSlope() * slopeOfTwo.getSlope() != -1) || (slopeOfOne.NaN == false) || (slopeOfTwo.NaN == false) || (slopeOfOne.horizontal == false) || (slopeOfTwo.horizontal == false) )); 
+        System.out.println(); 
+        System.out.println("Test equality"); 
+        
+        // equal (same coefficient) 
+        System.out.println("Same coefficients, are equal? " + ((slopeOfOne.A == slopeOfTwo.A) && (slopeOfOne.B == slopeOfTwo.B) && (slopeOfOne.C == slopeOfTwo.C))); 
+    /*    
+        // equal (multiple of coefficients) 
+        System.out.println("Different coefficients, same multiplier, are equal? " + ); 
+    */    
+        // not equal 
+        System.out.println("Are not equal? " +  ((slopeOfOne.A != slopeOfTwo.A) && (slopeOfOne.B != slopeOfTwo.B) && (slopeOfOne.C != slopeOfTwo.C))); 
+    } 
+    
+    
+    
+} 
