@@ -1,0 +1,70 @@
+package csm10jlab07;
+
+public class Line {
+    double A = 0, B = 0, C = 0;
+    boolean NaN = false;
+    boolean horizontal = false;
+    double slope = 0;
+    
+    public Line(){
+        
+    }
+    public Line(double a, double b, double c){
+        A = a;
+        B = b;
+        C = c;
+    }
+    public  void setA(double a){
+        A = a;
+    }
+    public double getA(){
+        return A;
+    }
+    public void setB(double b){
+        B = b;
+    }
+    public double getB(){
+        return B;
+    }
+    public void setC(double c){
+        C = c;
+    }
+    public double getC(){
+        return C;
+    }
+    public double getSlope(){
+        slope = (-1 * A / B);
+        if (B == 0){
+            NaN = true;
+        } else if (A == 0){
+            horizontal = true;
+        }
+            
+        return slope;
+            
+    }
+    public boolean isNaN(){
+        return NaN;
+    }
+    public boolean equals(boolean check){
+        return check;
+    }
+    public boolean parallelTo(boolean ch){
+        return ch;
+    }
+    public boolean perpendicularTo(boolean chek){
+        return chek;
+    }
+    public boolean isVertical(){
+        return NaN;
+    }
+    public boolean isHorizontal(){
+        return horizontal;
+    }
+    
+    
+    
+    
+    
+}
+
